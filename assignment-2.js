@@ -7,10 +7,9 @@ function mergeSort(arr) {
     let left = arr.slice(0, middle);
 
     let right = arr.slice(middle);
+    return merge(mergeSort(left), mergeSort(right));
   }
 }
-
-console.log(mergeSort([12, 5, 1]));
 
 function merge(left, right) {
   let i = 0;
@@ -40,15 +39,7 @@ function merge(left, right) {
       }
     }
   }
-  console.log(mergedArr);
+  return mergedArr;
 }
 
-merge([2], [3]);
-
-// left = 12;
-// (right = 5), 1;
-// rightSorted=mergeSort(5, 1);
-// left = 5;
-// right = 1;
-// sortedArr = 1 5;
-// rightSorted=1 5
+console.log(mergeSort([12, 5, 1, 7, 4, 1, 0, 2, 5, 1000, 32, 44545, 2334]));
